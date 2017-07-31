@@ -1,0 +1,54 @@
+<ion-header>
+	<ion-navbar color="background">
+		<ion-title>Add new car</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="maincontent">
+	
+	<ion-list no-lines>
+
+		<ion-card color="card">
+			<ion-card-header style="color: yellow; background-color: #26536c;">Enter Car No</ion-card-header>
+			<ion-card-content style="background-color: #26536c" >
+				<ion-input class="datainput" [(ngModel)]="carno" type="text" placeholder="Enter the car number.."></ion-input>
+			</ion-card-content>
+		</ion-card>
+		<ion-list radio-group no-lines [(ngModel)]="slotno">
+			<ion-list-header style="color: yellow; background-color: #26536c;">
+				Select a slot number
+			</ion-list-header>
+
+			<ion-item class="slotitem">
+				<ion-label>Slot no 1</ion-label>
+				<ion-radio value="1"  [disabled]="checkifpresent(1)" ></ion-radio>
+			</ion-item>
+
+			<ion-item class="slotitem">
+				<ion-label>Slot no 2</ion-label>
+				<ion-radio value="2" [disabled]="checkifpresent(2)"></ion-radio>
+			</ion-item>
+
+			<ion-item class="slotitem">
+				<ion-label>Slot no 3</ion-label>
+				<ion-radio value="3" [disabled]="checkifpresent(3)"></ion-radio>
+			</ion-item>
+			<ion-item class="slotitem">
+				<ion-label>Slot no 4</ion-label>
+				<ion-radio value="4" [disabled]="checkifpresent(4)"></ion-radio>
+			</ion-item>
+
+			<ion-item class="slotitem">
+				<ion-label>Slot no 5</ion-label>
+				<ion-radio value="5" [disabled]="checkifpresent(5)"></ion-radio>
+			</ion-item>
+
+			<ion-item class="slotitem">
+				<ion-label>Slot no 6</ion-label>
+				<ion-radio value="6" [disabled]="checkifpresent(6)"></ion-radio>
+			</ion-item>
+		</ion-list>
+
+		<button ion-button block outline (click)="addItem()" style="text-transform: none; background-color: #26536c;color: white">Add car details</button>
+	</ion-list>  
+</ion-content>
