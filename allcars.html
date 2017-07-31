@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar color="background">
+    <ion-title>Allcars</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="maincontent">
+
+	<ion-list no-lines class="mainlist">
+		<ion-list-header style="color: yellow;background-color: #26536c">All the present cars</ion-list-header>
+		<ion-card *ngFor="let car of cars" style="background-color: #26536c">
+			<ion-card-content>
+				<ion-item class="carditem">
+					Car no: {{car.carno}}
+				</ion-item>
+				<ion-item class="carditem">
+					Entry time: {{car.entrytime}}
+				</ion-item>
+				<ion-item class="carditem">
+					Slot given: {{car.slotno}}
+				</ion-item>
+			</ion-card-content>
+		</ion-card>
+	</ion-list>
+</ion-content>
