@@ -1,0 +1,32 @@
+
+<ion-header>
+
+  <ion-navbar color="background">
+    <ion-title>Car details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="maincontent">
+
+	<ion-list no-lines class="mainlist">
+		<ion-list-header class="listheader">Updated car details</ion-list-header>
+		<ion-item class="listitem">
+			Car no: {{mycarno}}
+		</ion-item>
+		<ion-item class="listitem">
+			Entry time: {{mytime}}
+		</ion-item>
+		<ion-item class="listitem">
+			Slot given: {{myslot}}
+		</ion-item>
+	</ion-list>
+
+	<div>
+		<button ion-button full clear style="color: #26536c" (click)="gotoHome()" >
+			<ion-icon name="arrow-dropleft"></ion-icon>&nbsp;
+			Goto home
+		</button>
+	</div>
+</ion-content>
