@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar color="background">
+    <ion-title>Remove a car</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="maincontent">
+
+	<ion-searchbar (ionInput)="getcarbyCarno($event)" style="background-color: #26536c;color: yellow" placeholder="Remove a car by car no.."></ion-searchbar>
+
+	<ion-list no-lines class="mainlist" *ngIf="datasearched && found">
+		<ion-list-header class="listheader">Car Details</ion-list-header>
+		<ion-item class="listitem" *ngFor="let car of cars,let i = index">
+			<p>Car no: {{car.carno}}</p>
+			<p>Entry time: {{car.entrytime}}</p>
+			<p>Slot given: {{car.slotno}}</p>
+			<div style="margin-top: 15px">			
+				<button *ngIf="car.carno && car.entrytime && car.slotno" ion-button full style="background-color: #26536c;" (click)="deleteCar(i)" >Remove this car</button>
+			</div>
+		</ion-item>
+	</ion-list>
+	<div *ngIf="datasearched && !found" style="text-align: center;height: 100px;width: 100%;margin: inherit"> 
+		<ion-note>No cars found</ion-note>
+	</div>
+</ion-content>
